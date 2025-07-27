@@ -1,4 +1,5 @@
 
+
 ### 1、git命令学习
 删除本地分支：git branch -d localBranchName
 
@@ -23,3 +24,6 @@
 2、合并某分支到main分支：git merge <name>
 
 3、推送main分支到远程：git push origin main
+
+我是wys 我将在这里和我的好朋友胡，赵学习attention等技术
+
