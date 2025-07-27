@@ -4,6 +4,17 @@ import json
 import math  # 新增数学库导入
 from openai import OpenAI
 
+# 程序功能介绍
+print("""
+欢迎使用智能助手程序！
+本程序提供以下功能：
+1. 执行任意Python代码
+2. 进行高精度数学计算
+3. 通过OpenAI API进行智能对话
+
+输入您的问题或指令，以'$'开头即可开始交互。
+""")
+
 #以下三个参数可以根据实际情况，从模型厂商处获取
 MODEL_NAME = "deepseek-v3-250324"
 client = OpenAI(

@@ -457,6 +457,24 @@ def display_conversation_info():
     print(f"- 单次对话最大消息数：{CONVERSATION_CONFIG['max_context_messages']}")
     print(f"- 历史记录文件：{CONVERSATION_CONFIG['history_file']}\n")
 
+print("\n欢迎使用高级智能助手！")
+print("本程序集成了多种功能：")
+print("1. 对话历史管理：自动保存和加载对话，支持配置最大历史记录数和单次对话消息数。")
+print("2. Python代码执行：能够安全地执行Python代码，并自动安装缺失的依赖包。")
+print("3. 百度搜索：通过关键词进行网页搜索，获取相关链接。")
+print("4. 网页内容抓取：根据URL抓取并解析网页内容。")
+print("5. PDF文件解析：提取本地PDF文件中的文本内容。")
+print("6. 高精度数学计算：支持复杂的数学表达式计算。")
+print("7. 实时时间查询：提供准确的当前日期和时间信息。")
+print("\n您可以输入问题或指令，例如：")
+print("- '帮我计算 123 * 456' (使用数学计算工具)")
+print("- '搜索一下最新的AI技术' (使用百度搜索工具)")
+print("- '解析一下d:/path/to/your/document.pdf' (使用PDF解析工具)")
+print("- '现在几点了？' (获取实时时间)")
+print("- '/config max_history 10' (配置对话历史数量)")
+print("- '/status' (查看当前配置)")
+print("\n开始您的智能体验吧！")
+
 while True:
     # 获取用户输入
     user_question = input("$ ")
@@ -483,7 +501,10 @@ while True:
     
     # 如果是时间相关的查询，先获取当前时间
     if any(keyword in user_question.lower() for keyword in ["时间", "日期", "几号", "星期", "周"]):
-        current_time = datetime.now()
+        # 定义北京时间时区
+        beijing_tz = pytz.timezone('Asia/Shanghai')
+        # 获取当前本地时间并转换为北京时间
+        current_time = datetime.datetime.now(beijing_tz)
         time_info = f"\n### 当前日期和时间\n{current_time.strftime('%Y年%m月%d日 %H:%M:%S')} {['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'][current_time.weekday()]}\n\n"
         user_question = time_info + user_question
     
