@@ -14,3 +14,8 @@
 合并某分支到当前分支：git merge <name>
 
 删除分支：git branch -d <name>
+
+某分支的更改合并到main分支：
+1、先切换到main分支：git checkout main
+2、合并某分支到main分支：git merge <name>
+3、推送main分支到远程：git push origin main
